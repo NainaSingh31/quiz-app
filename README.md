@@ -1,0 +1,1 @@
+# Quiz App\n\nReact + Vite + Tailwind + Open Trivia DB.\n\n## Run\n```bash\nnpm install\nnpm run dev\n```

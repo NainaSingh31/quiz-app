@@ -1,0 +1,5 @@
+export default function QuestionCard({q,index,total,selected,locked,onSelect}){return(<div className="bg-white rounded-2xl shadow p-5">
+<h2 className="text-lg font-semibold">Question {index+1} of {total}</h2><p className="mt-3 text-gray-800">{q.question}</p>
+<div className="mt-4 grid gap-3">{q.options.map((opt,i)=>{const isSelected=selected===i;const isCorrect=locked&&i===q.correctIndex;const isWrong=locked&&isSelected&&!isCorrect;
+return(<button key={i} className={'w-full text-left border rounded-xl px-4 py-3 '+(isSelected&&!locked?'border-blue-500':'border-gray-200')+(isCorrect?' bg-green-50 border-green-500':'')+(isWrong?' bg-red-50 border-red-500':'')}
+onClick={()=>onSelect(i)} disabled={locked}><span className="font-medium mr-2">{String.fromCharCode(65+i)}.</span>{opt}</button>);})}</div></div>);}
